@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
 })
 
 // Routes
-app.use("/api/users", require("./routes/userRoutes"))
+app.use("/api/users", require("./routes/userRoutes").default)
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`)
 })
