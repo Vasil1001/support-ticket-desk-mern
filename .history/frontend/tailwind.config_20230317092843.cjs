@@ -9,6 +9,7 @@ module.exports = {
     extend: {},
   },
   "plugins": [
+    "prettier-plugin-svelte",
     "prettier-plugin-organize-imports",
     "prettier-plugin-tailwindcss" // MUST come last
   ],
