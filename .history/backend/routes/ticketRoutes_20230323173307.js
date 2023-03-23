@@ -11,6 +11,7 @@ const {
 const { protect, admin } = require("../middleware/authMiddleware")
 
 // Define protected routes to ensure authentication for the Ticket API
+// GET and POST routes for '/'
 router.route("/")
     .get(protect, getTickets)
     .post(protect, createTicket)

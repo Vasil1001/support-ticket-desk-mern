@@ -107,9 +107,8 @@ const deleteTicket = asyncHandler(async (req, res) => {
     throw new Error("Not authorized")
   }
 
-  // ? REPLACE `await ticket.remove()` WITH `findByIdAndDelete`
+  // ? REPLACE `await ticket.remove()` WITH `deleteOne`
   await Ticket.findByIdAndDelete(req.params.id)
-
   res.status(200).json({ success: true }) // ? JSON response send ticket
 })
 

@@ -52,7 +52,7 @@ const getTicket = asyncHandler(async (req, res) => {
   res.status(200).json(ticket) // ? JSON response send ticket
 })
 
-// @desc create user tickets
+// @desc Create user tickets
 // @route POST /api/tickets
 // @access Private
 const createTicket = asyncHandler(async (req, res) => {
@@ -107,13 +107,12 @@ const deleteTicket = asyncHandler(async (req, res) => {
     throw new Error("Not authorized")
   }
 
-  // ? REPLACE `await ticket.remove()` WITH `findByIdAndDelete`
-  await Ticket.findByIdAndDelete(req.params.id)
+  await ticket.remove()
 
-  res.status(200).json({ success: true }) // ? JSON response send ticket
+  res.status(200).json({success: true}) // ? JSON response send ticket
 })
 
-// @desc Update ticket
+// @desc update ticket
 // @route PUT /api/tickets/:id
 // @access Private
 const updateTicket = asyncHandler(async (req, res) => {
@@ -139,13 +138,9 @@ const updateTicket = asyncHandler(async (req, res) => {
     throw new Error("Not authorized")
   }
 
-  const updatedTicket = await Ticket.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    { new: true }
-  )
+  const updatedTicket = await Ticket.findByIdAndUpdate(req.params.id, )
 
-  res.status(200).json(updatedTicket) // ? JSON response send ticket
+  res.status(200).json({success: true}) // ? JSON response send ticket
 })
 
 module.exports = {
@@ -153,5 +148,4 @@ module.exports = {
   getTicket,
   createTicket,
   deleteTicket,
-  updateTicket,
 }
