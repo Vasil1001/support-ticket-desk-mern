@@ -33,7 +33,7 @@ export const register = createAsyncThunk(
 // * Login user
 export const login = createAsyncThunk("auth/login", async (user, thunkAPI) => {
   try {
-    return await authService.login(user)
+    return await authService.register(user)
   } catch (error) {
     const message =
       (error.response &&
@@ -77,21 +77,7 @@ export const authSlice = createSlice({
       .addCase(register.rejected, (state, action) => {
         state.isLoading = false
         state.isError = true
-        state.message = action.payload // * this is coming from the try catch error message from backend see return thunkAPI.rejectWithValue(message) in const register
-        state.user = null
-      })
-      .addCase(login.pending, (state) => {
-        state.isLoading = true
-      })
-      .addCase(login.fulfilled, (state, action) => {
-        state.isLoading = false
-        state.isSuccess = true
-        state.user = action.payload // * this is coming from the try in login
-      })
-      .addCase(login.rejected, (state, action) => {
-        state.isLoading = false
-        state.isError = true
-        state.message = action.payload // * this is coming from the try catch error message from backend see return thunkAPI.rejectWithValue(message) in const register
+        state.message = action.payload // * this is coming from the trycatch error message from backend see return thunkAPI.rejectWithValue(message) in const register
         state.user = null
       })
       .addCase(logout.fulfilled, (state) => {

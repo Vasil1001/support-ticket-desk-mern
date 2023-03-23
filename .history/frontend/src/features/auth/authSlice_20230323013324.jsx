@@ -77,7 +77,7 @@ export const authSlice = createSlice({
       .addCase(register.rejected, (state, action) => {
         state.isLoading = false
         state.isError = true
-        state.message = action.payload // * this is coming from the try catch error message from backend see return thunkAPI.rejectWithValue(message) in const register
+        state.message = action.payload // * this is coming from the trycatch error message from backend see return thunkAPI.rejectWithValue(message) in const register
         state.user = null
       })
       .addCase(login.pending, (state) => {
@@ -91,7 +91,7 @@ export const authSlice = createSlice({
       .addCase(login.rejected, (state, action) => {
         state.isLoading = false
         state.isError = true
-        state.message = action.payload // * this is coming from the try catch error message from backend see return thunkAPI.rejectWithValue(message) in const register
+        state.message = action.payload // * this is coming from the trycatch error message from backend see return thunkAPI.rejectWithValue(message) in const register
         state.user = null
       })
       .addCase(logout.fulfilled, (state) => {

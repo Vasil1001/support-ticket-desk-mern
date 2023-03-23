@@ -65,7 +65,6 @@ export default function Register() {
   if (isLoading) {
     return <Spinner />
   }
-  
   return (
     <div className="flex flex-col min-h-screen mx-auto items-center mt-24">
       <Card

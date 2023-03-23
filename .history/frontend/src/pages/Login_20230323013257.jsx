@@ -49,16 +49,14 @@ export default function Login() {
         // NOTE: by unwrapping the AsyncThunkAction we can navigate the user after
         // getting a good response from our API or catch the AsyncThunkAction
         // rejection to show an error message
-        toast.success(`You have successfully logged in. Welcome back ${user.name}`)
+        toast.success(`You have successfully logged in. Welcome ${user.name}`)
         navigate("/")
       })
       .catch(toast.error)
   }
-
   if (isLoading) {
     return <Spinner />
   }
-
   return (
     <div className="flex flex-col min-h-screen mx-auto items-center mt-24">
       <Card

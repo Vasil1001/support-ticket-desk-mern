@@ -55,17 +55,14 @@ export default function Register() {
           // NOTE: by unwrapping the AsyncThunkAction we can navigate the user after
           // getting a good response from our API or catch the AsyncThunkAction
           // rejection to show an error message
-          toast.success(`Registration successful - welcome ${user.name}`)
+          toast.success(`Registered new user - ${user.name}`)
           navigate("/")
         })
         .catch(toast.error)
     }
   }
 
-  if (isLoading) {
-    return <Spinner />
-  }
-  
+  if(isLoading) {}
   return (
     <div className="flex flex-col min-h-screen mx-auto items-center mt-24">
       <Card

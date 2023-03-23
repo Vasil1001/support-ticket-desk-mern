@@ -3,10 +3,7 @@ import { FaSignInAlt } from "react-icons/fa"
 import { Card, Text } from "@tremor/react"
 import { toast } from "react-toastify"
 import { useSelector, useDispatch } from "react-redux"
-import { login, reset } from "../features/auth/authSlice"
-import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline"
-import { useNavigate } from "react-router-dom"
-import Spinner from "../components/Spinner"
+import { login } from "../features/auth/authSlice"
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -21,10 +18,10 @@ export default function Login() {
   const togglePasswordVisible = () => {
     setPasswordShown(passwordShown ? false : true)
   }
-  const navigate = useNavigate()
+
   const dispatch = useDispatch()
 
-  const { user, isLoading, isSuccess, isError, message } = useSelector(
+  const { user, isLoading, isSuccess, message } = useSelector(
     (state) => state.auth
   )
 
@@ -38,25 +35,12 @@ export default function Login() {
   const onSubmit = (e) => {
     e.preventDefault()
 
-    const userData = {
-      email,
-      password,
-    }
+   const userData = {
+    email,
+    password
+   }
 
-    dispatch(login(userData))
-      .unwrap()
-      .then((user) => {
-        // NOTE: by unwrapping the AsyncThunkAction we can navigate the user after
-        // getting a good response from our API or catch the AsyncThunkAction
-        // rejection to show an error message
-        toast.success(`You have successfully logged in. Welcome back ${user.name}`)
-        navigate("/")
-      })
-      .catch(toast.error)
-  }
-
-  if (isLoading) {
-    return <Spinner />
+   dispatch(login(userData))
   }
 
   return (
@@ -71,9 +55,7 @@ export default function Login() {
         </h1>
         <p className="text-gray-500 text-lg">Please login to continue</p>
         <form onSubmit={onSubmit}>
-          <label className="block font-bold text-gray-600 mt-3 mb-1">
-            Email
-          </label>
+          <label className="block font-bold text-gray-600 mt-3 mb-1">Email</label>
           <input
             type="text"
             className="border-2 border-gray-300 p-2 rounded-md w-full mb-3"
@@ -86,18 +68,17 @@ export default function Login() {
           />
 
           <label className="block font-bold text-gray-600 mb-1">Password</label>
-          <div className="flex items-center ">
-            <input
-              type={passwordShown ? "text" : "password"}
-              className="border-2 border-gray-300 p-2 rounded-md w-full mb-3"
-              id="password"
-              name="password"
-              value={password}
-              onChange={onChange}
-              placeholder="Enter your password"
-              required
-            />
-            {passwordShown ? (
+          <input
+            type="text"
+            className="border-2 border-gray-300 p-2 rounded-md w-full mb-3"
+            id="password"
+            name="password"
+            value={password}
+            onChange={onChange}
+            placeholder="Enter your password"
+            required
+          />
+          {passwordShown ? (
               <EyeSlashIcon
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
@@ -114,7 +95,6 @@ export default function Login() {
                 onClick={() => togglePasswordVisible()}
               />
             )}
-          </div>
 
           <button className="w-full text-white px-3 p-2 bg-green-700 rounded-md mt-2">
             Login
