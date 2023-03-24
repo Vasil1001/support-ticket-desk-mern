@@ -23,8 +23,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              <Route path="/new-ticket" element={<PrivateRoute />}>
-                <Route path="/new-ticket" element={<NewTicket />} />
+              <Route path="/new-ticket" element={<PrivateRoute />
+              <Route path="/new-ticket/:id" element={<NewTicket />} />
               </Route>
             </Routes>
           </div>

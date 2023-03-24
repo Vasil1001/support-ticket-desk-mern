@@ -8,7 +8,6 @@ import Header from "./components/Header"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import NewTicket from "./pages/NewTicket"
-import PrivateRoute from "./components/PrivateRoute"
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,16 +15,14 @@ function App() {
   return (
     <>
       <Router>
-        <div className="min-w-screen min-h-screen h-screen-vh bg-[#d8e3e8]">
+        <div className="min-w-screen min-h-screen h-screen-vh bg-slate-200">
           <Header />
           <div className="mx-auto px-5 justify-center">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              <Route path="/new-ticket" element={<PrivateRoute />}>
-                <Route path="/new-ticket" element={<NewTicket />} />
-              </Route>
+              <Route path="/new-ticket" element={<NewTicket />} />
             </Routes>
           </div>
         </div>
