@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.loadingSpinnerContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingSpinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: #000 transparent #555 transparent;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+
+.ticket,
+.ticket-headings {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background: #f4f4f4;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.status {
+  background-color: #333;
+  color: #fff;
+  width: 100px;
+  padding: 0 15px;
+  justify-self: center;
+  border-radius: 10px;
+  margin-x
+  font-size: 16px;
+  text-align: center;
+}
+
+.status-new {
+  background-color: green;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.status-open {
+  background-color: steelblue;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.status-closed {
+  background-color: darkred;
+  color: #fff;
+  border-radius: 10px;
+}
