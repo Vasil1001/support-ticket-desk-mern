@@ -1,6 +1,4 @@
 {
-  "github.copilot-labs.showBrushesLenses": true,
-  "github.copilot.advanced": {
-    
-  }
+  "github.copilot-labs.showBrushesLenses": false,
+  "github.copilot.advanced": {}
 }
