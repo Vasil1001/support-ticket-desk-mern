@@ -7,8 +7,7 @@
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
     "client": "npm run dev --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "npm i && cd frontend && npm i && npm run build"
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Vasil Dzhakov",
   "license": "ISC",
@@ -24,6 +23,6 @@
     "mongoose": "^7.0.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.21"
   }
 }
