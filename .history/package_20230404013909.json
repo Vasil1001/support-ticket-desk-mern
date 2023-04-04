@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node backend/server.js",
     "server": "node backend/server.js",
-    "client": "concurrently \"cd frontend\" \"npm install --prefix frontend\" \"npm run build --prefix frontend\" \"npm run dev --prefix frontend\"" ,
+    "client": "concurrently \"cd frontend\" \"npm install --prefix frontend\" \"npm run build --prefix frontend\" \"npm run build --prefix frontend\"" ,
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "npm i && cd frontend && npm i && npm run build"
   },
