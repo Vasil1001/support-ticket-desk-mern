@@ -9,7 +9,7 @@
     "client": "concurrently \"cd frontend\" \"npm install --prefix frontend\" \"npm run build --prefix frontend\" \"npm run dev --prefix frontend\"" ,
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "npm i && cd frontend && npm i && npm run build",
-    "both-dev": "concurrently \"npm run server\" \"npm --prefix ../frontend/ install\" \"npm --prefix ../frontend/ run dev\""
+    "both-dev": "concurrently \"npm run server\" \"npm --prefix ../client/ run dev\""
   },
   "author": "Vasil Dzhakov",
   "license": "ISC",
