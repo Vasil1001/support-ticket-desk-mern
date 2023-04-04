@@ -4,12 +4,12 @@ require('colors')
 require('dotenv').config()
 const { errorHandler } = require('./middleware/errorMiddleware')
 const connectDB = require('./config/db')
-
+const PORT = process.env.PORT || 5000
 
 var cors = require("cors")
 
 // * Initialize port and express
-const PORT = process.env.PORT || 5000
+const port = process.env.PORT || 8080
 const app = express()
 
 connectDB() // * Connect to database
@@ -18,11 +18,16 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cors())
 
+// * Welcome route
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Welcome to support desk API" })
+})
+
 // * Routes
 app.use("/api/users", require("./routes/userRoutes"))
 app.use("/api/tickets", require("./routes/ticketRoutes"))
 
-// * Serve Frontend
+// Serve Frontend
 if (process.env.NODE_ENV === 'production') {
   // Set build folder as static
   app.use(express.static(path.join(__dirname, '../frontend/build')))
@@ -40,6 +45,6 @@ if (process.env.NODE_ENV === 'production') {
 // * Error handling middleware
 app.use(errorHandler)
 
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`)
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`)
 })

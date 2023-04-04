@@ -24,10 +24,8 @@ const createNote = async (noteText, ticketId, token) => {
   }
 
   const response = await axios.post(
-    API_URL + ticketId + "/notes",
-    {
-      text: noteText,
-    },
+    `http://localhost:5000/api/tickets/${ticketId}/notes`,
+    { text: noteText },
     config
   )
 

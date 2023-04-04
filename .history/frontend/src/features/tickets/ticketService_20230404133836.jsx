@@ -1,7 +1,7 @@
 import React from "react"
 import axios from "axios"
 
-const API_URL = "/api/tickets/"
+const API_URL = '/api/tickets/'
 
 // * Create a new ticket
 const createTicket = async (ticketData, token) => {
@@ -37,7 +37,10 @@ const getTicket = async (ticketId, token) => {
     },
   }
 
-  const response = await axios.get(API_URL + ticketId, config)
+  const response = await axios.get(
+    `http://localhost:5000/api/tickets/${ticketId}`,
+    config
+  )
 
   return response.data
 }
@@ -51,7 +54,7 @@ const closeTicket = async (ticketId, token) => {
   }
 
   const response = await axios.put(
-    API_URL + ticketId,
+    `http://localhost:5000/api/tickets/${ticketId}`,
     { status: "closed" },
     config
   )
@@ -63,7 +66,7 @@ const ticketService = {
   createTicket,
   getTickets,
   getTicket,
-  closeTicket,
+  closeTicket
 }
 
 export default ticketService

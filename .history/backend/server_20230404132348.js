@@ -18,6 +18,11 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cors())
 
+// * Welcome route
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Welcome to support desk API" })
+})
+
 // * Routes
 app.use("/api/users", require("./routes/userRoutes"))
 app.use("/api/tickets", require("./routes/ticketRoutes"))
@@ -40,6 +45,6 @@ if (process.env.NODE_ENV === 'production') {
 // * Error handling middleware
 app.use(errorHandler)
 
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`)
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`)
 })
