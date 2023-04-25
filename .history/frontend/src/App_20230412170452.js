@@ -19,6 +19,19 @@ function App() {
 
   return (
     <>
+    <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      <ToastContainer />
       <Router>
         <div className="min-w-screen min-h-screen h-screen-vh bg-gradient-to-br from-cyan-50 via-[#dde8ed] to-cyan-100 bg-[#dde8ed]">
           <Header />
@@ -41,19 +54,7 @@ function App() {
         </div>
       </Router>
 
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={true}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      >
-      </ToastContainer>
+      
     </>
   )
 }

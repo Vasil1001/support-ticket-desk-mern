@@ -40,4 +40,3 @@ if (process.env.NODE_ENV === 'production') {
 // * Error handling middleware
 app.use(errorHandler)
 
-app.listen(PORT, () => console.log(`server listening on ${PORT}`))

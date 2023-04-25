@@ -42,18 +42,18 @@ function App() {
       </Router>
 
       <ToastContainer
-        position="top-right"
+        position="bottom-right"
         autoClose={5000}
         hideProgressBar={false}
-        newestOnTop={true}
+        newestOnTop={false}
         closeOnClick
         rtl={false}
         pauseOnFocusLoss
         draggable
         pauseOnHover
         theme="light"
-      >
-      </ToastContainer>
+      />
+      <ToastContainer />
     </>
   )
 }

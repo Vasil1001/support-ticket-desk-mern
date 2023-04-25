@@ -53,7 +53,7 @@ function App() {
         pauseOnHover
         theme="light"
       >
-      </ToastContainer>
+      </ToastContainer />
     </>
   )
 }

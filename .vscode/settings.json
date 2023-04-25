@@ -1,4 +1,5 @@
 {
   "github.copilot-labs.showBrushesLenses": false,
-  "github.copilot.advanced": {}
+  "github.copilot.advanced": {},
+  "easynpm.defaultProjectRoot": "c:\\Users\\vasko\\Desktop\\UdemyReact\\Project_4\\support-ticket-desk-mern\\frontend"
 }

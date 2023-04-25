@@ -74,7 +74,7 @@ export default function Ticket() {
     )
   }
   return (
-    <div className="mx-auto xl:w-6/12">
+    <div c>
       <div className="flex justify-between p-1 ">
         <BackButton to="/tickets" />
         {ticket.status !== "closed" && (

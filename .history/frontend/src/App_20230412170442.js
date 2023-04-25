@@ -52,8 +52,8 @@ function App() {
         draggable
         pauseOnHover
         theme="light"
-      >
-      </ToastContainer>
+      />
+      <ToastContainer />
     </>
   )
 }
