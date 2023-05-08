@@ -3,7 +3,7 @@ Support ticket app using MERN stack _FINISHED_
 
 Link to app: https://vasilis-mern-support-desk.onrender.com/
 
-A MERN (MongoDB, Express, React, Node.js) full-stack application that allows users to create tickets with their issue and track them.
+A MERN (MongoDB, Express, React, Node.js) full-stack support ticket desk application application that allows users to create tickets, describe their issue, select a product and track the issue progress, as well as close the tickets if fixed. 
 
 Project 4 of the 'React Front to Back 2022' Udemy course, with my own twist in layout design and features. 
 
